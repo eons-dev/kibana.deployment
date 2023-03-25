@@ -5,6 +5,7 @@ metadata:
   labels:
     app: {name}
 spec:
+  elasticsearchHosts: "https://elasticsearch-master:9200"
   replicas: 1
   selector:
     matchLabels:
@@ -22,13 +23,4 @@ spec:
         ports:
         - containerPort: 5601
           name: kibana
-        env:
-        - name: KBN_PATH_CONF
-          value: /etc/kibana
-        volumeMounts:
-        - name: config
-          mountPath: /etc/kibana
-      volumes:
-      - name: config
-        configMap: 
-          name: {name}-config
+        

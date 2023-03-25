@@ -7,4 +7,5 @@ data:
     server.name: '{name}'
     logging.dest: /etc/kibana/kibana.log
 {re.sub('^', '    ', configure, flags=re.M)}
+  elasticsearchHosts: "https://elasticsearch-master:9200"
     
